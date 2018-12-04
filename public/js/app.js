@@ -47892,18 +47892,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       message: 'This is my first component using binding data'
     };
   },
-  methods: {
-    sayHello: function sayHello() {
-      this.message = "You clicked button";
+  computed: {
+    reverseMessage: function reverseMessage() {
+      return this.message.split('').reverse().join('');
     }
   }
 });
@@ -47917,11 +47914,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "my-component" }, [
-    _c("div", [_vm._v(_vm._s(_vm.message))]),
-    _vm._v(" "),
-    _c("div", [
-      _c("button", { on: { click: _vm.sayHello } }, [_vm._v("Click me!")])
-    ])
+    _c("div", [_vm._v(_vm._s(_vm.reverseMessage))])
   ])
 }
 var staticRenderFns = []
