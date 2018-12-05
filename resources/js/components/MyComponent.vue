@@ -1,15 +1,8 @@
 <template>
     <div class="my-component">
-        <!-- How to using v-if, v-else, v-else-if, v-show -->
-        <div class="block-1" v-if="isActive == false">
-            This is block 1
-        </div>
-        <div class="block-2" v-if="isActive == true">
-            This is block 2
-        </div>
-        <div>
-            <button @click="toggleActive">Button</button>
-        </div>
+        <ul>
+            <li v-for="(value, key) in clubs">{{ key }} - {{ value }}</li>
+        </ul>
     </div>
 </template>
 
@@ -17,24 +10,17 @@
     export default {
         data() {
             return {
-                isActive: true
-            }
-        },
-        methods: {
-            toggleActive() {
-                if(this.isActive == true) {
-                    this.isActive = false
-                }
-                else {
-                    this.isActive = true
-                }
+                clubs: [
+                    { name1: 'Real Madrid' },
+                    { name2: 'Barcelona' },
+                    { name3: 'Manchester United' },
+                    { name4: 'Chelsea' },
+                    { name5: 'Liverpool' },
+                ]
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .my-component {
-        color: red;
-    }
 </style>

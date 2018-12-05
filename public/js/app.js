@@ -47532,7 +47532,7 @@ exports = module.exports = __webpack_require__(46)(false);
 
 
 // module
-exports.push([module.i, "\n.my-component[data-v-f79de9d4] {\n  color: red;\n}\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -47894,26 +47894,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      isActive: true
+      clubs: [{
+        name1: 'Real Madrid'
+      }, {
+        name2: 'Barcelona'
+      }, {
+        name3: 'Manchester United'
+      }, {
+        name4: 'Chelsea'
+      }, {
+        name5: 'Liverpool'
+      }]
     };
-  },
-  methods: {
-    toggleActive: function toggleActive() {
-      if (this.isActive == true) {
-        this.isActive = false;
-      } else {
-        this.isActive = true;
-      }
-    }
   }
 });
 
@@ -47926,21 +47921,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "my-component" }, [
-    _vm.isActive == false
-      ? _c("div", { staticClass: "block-1" }, [
-          _vm._v("\n        This is block 1\n    ")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.isActive == true
-      ? _c("div", { staticClass: "block-2" }, [
-          _vm._v("\n        This is block 2\n    ")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", [
-      _c("button", { on: { click: _vm.toggleActive } }, [_vm._v("Button")])
-    ])
+    _c(
+      "ul",
+      _vm._l(_vm.clubs, function(value, key) {
+        return _c("li", [_vm._v(_vm._s(key) + " - " + _vm._s(value))])
+      })
+    )
   ])
 }
 var staticRenderFns = []
