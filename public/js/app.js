@@ -47892,15 +47892,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      message: 'This is my first component using binding data'
+      isActive: true
     };
   },
-  computed: {
-    reverseMessage: function reverseMessage() {
-      return this.message.split('').reverse().join('');
+  methods: {
+    toggleActive: function toggleActive() {
+      if (this.isActive == true) {
+        this.isActive = false;
+      } else {
+        this.isActive = true;
+      }
     }
   }
 });
@@ -47914,7 +47926,21 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "my-component" }, [
-    _c("div", [_vm._v(_vm._s(_vm.reverseMessage))])
+    _vm.isActive == false
+      ? _c("div", { staticClass: "block-1" }, [
+          _vm._v("\n        This is block 1\n    ")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isActive == true
+      ? _c("div", { staticClass: "block-2" }, [
+          _vm._v("\n        This is block 2\n    ")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", [
+      _c("button", { on: { click: _vm.toggleActive } }, [_vm._v("Button")])
+    ])
   ])
 }
 var staticRenderFns = []
