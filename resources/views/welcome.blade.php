@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="app">
-            <user-dashboard></user-dashboard>
+            <life-cycle></life-cycle>
         </div>
         <script src="/js/app.js"></script>
     </body>
